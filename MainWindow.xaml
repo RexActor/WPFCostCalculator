@@ -1,0 +1,26 @@
+﻿<Window x:Class="WPFCostCalculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFCostCalculator"
+        mc:Ignorable="d"
+        Title="Cost Calculator Software" Height="450" Width="800" ResizeMode="CanResizeWithGrip">
+    
+    <Grid>
+
+        <Button Name="CostCalculatorButton" Background="#9FDCAD" BorderThickness="2" BorderBrush="Black"  Content=" Operations Cost Calculator (Flowers)" HorizontalAlignment="Left" Margin="10,94,0,0" VerticalAlignment="Top" Width="324" Height="79" Click="CostCalculatorButton_Click"/>
+
+
+        <Button Name="FinanceWindow" Background="#9FDCAD" BorderThickness="2" BorderBrush="Black" Content="Finance" HorizontalAlignment="Left" Margin="10,262,0,0" VerticalAlignment="Top" Width="324" Height="79" Click="FinanceWindow_Click"/>
+
+
+        <Label Content="HP&amp;F Cost Calculator" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="#0F62AB" FontSize="20" FontWeight="Black" HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top" Width="772" Height="87"/>
+        <TextBlock HorizontalAlignment="Left" TextAlignment="Center"  Height="79" Background="#E99595" FontStyle="Normal" FontWeight="Black" Foreground="#052E04" Margin="359,116,0,0"  TextWrapping="Wrap" Text="Work in progress. Some features are not implemented yet. Not taking any responsibility for now if is being used for current calculations for targets etc." VerticalAlignment="Top" Width="400"/>
+        <Image Margin="10,262,703,78" Source="Banker-01-WF.png" Stretch="Fill" RenderTransformOrigin="0.568,1.293"/>
+        <Button x:Name="CostCalculatorButtonPlants" Background="#9FDCAD" BorderThickness="2" BorderBrush="Black" Content=" Operations Cost Calculator (Plants)" HorizontalAlignment="Left" Margin="10,178,0,0" VerticalAlignment="Top" Width="324" Height="79" Click="CostCalculatorButtonPlants_Click"/>
+        <Image Margin="10,94,716,246" Source="Flower - 03.png" Stretch="Fill"/>
+        <Image Margin="3,178,710,162" Source="Plant.png" Stretch="Fill"/>
+
+    </Grid>
+</Window>

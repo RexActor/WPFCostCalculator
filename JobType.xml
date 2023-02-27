@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<JobTypes>
+  <JobType>
+    <Name>Hand-Tie</Name>
+  </JobType>
+  <JobType>
+    <Name>Hand-Finish</Name>
+  </JobType>
+  <JobType>
+    <Name>Line Pack</Name>
+  </JobType>
+  <JobType>
+    <Name>Conditioning</Name>
+  </JobType>
+  <JobType>
+    <Name>Mecaflora</Name>
+  </JobType>
+  <JobType>
+    <Name>Middleton</Name>
+  </JobType>
+</JobTypes>

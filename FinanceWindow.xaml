@@ -1,0 +1,49 @@
+﻿<Window x:Class="WPFCostCalculator.FinanceWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFCostCalculator"
+        mc:Ignorable="d"
+        Title="FinanceWindow" Height="450" Width="800">
+    <Grid>
+        <ListView Name="TrackList" HorizontalAlignment="Left" Height="354" Margin="10,55,0,0" VerticalAlignment="Top" Width="772" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" Width="50" local:GridViewColumnVisibilityManager.IsVisible="True" DisplayMemberBinding="{Binding id}"/>
+                    <GridViewColumn Header="Product Code"  Width="150" local:GridViewColumnVisibilityManager.IsVisible="True" DisplayMemberBinding="{Binding productCode}"/>
+                    <GridViewColumn Header="Activate/Deactivate" Width="150" local:GridViewColumnVisibilityManager.IsVisible="True"  DisplayMemberBinding="{Binding activateDeactivate}"/>
+                    <GridViewColumn Header="Line Type" Width="150" local:GridViewColumnVisibilityManager.IsVisible="True"  DisplayMemberBinding="{Binding lineType}"/>
+                    <GridViewColumn Header="Product "  Width="150" local:GridViewColumnVisibilityManager.IsVisible="True" DisplayMemberBinding="{Binding productDescription}"/>
+                    <GridViewColumn Header="Prophet Description" Width="200" local:GridViewColumnVisibilityManager.IsVisible="True"  DisplayMemberBinding="{Binding prophetDescription}"/>
+                    <GridViewColumn Header="Selected Speed" Width="100" local:GridViewColumnVisibilityManager.IsVisible="False"  DisplayMemberBinding="{Binding selectedSpeed}"/>
+                    <GridViewColumn Header="Job Type" Width="150" local:GridViewColumnVisibilityManager.IsVisible="True"  DisplayMemberBinding="{Binding jobType}"/>
+                    <GridViewColumn Header="Job Category" Width="150" local:GridViewColumnVisibilityManager.IsVisible="True"  DisplayMemberBinding="{Binding jobCategory}"/>
+                    <GridViewColumn Header="Spacing" Width="200" local:GridViewColumnVisibilityManager.IsVisible="False"  DisplayMemberBinding="{Binding spacing}"/>
+                    <GridViewColumn Header="Target %" Width="100" local:GridViewColumnVisibilityManager.IsVisible="True"  DisplayMemberBinding="{Binding targetPR}"/>
+                    <GridViewColumn Header="Hourly Rate" Width="100" local:GridViewColumnVisibilityManager.IsVisible="True"  DisplayMemberBinding="{Binding hourlyRate}"/>
+                    <GridViewColumn Header="Line Speed 30%" Width="100" local:GridViewColumnVisibilityManager.IsVisible="False"  DisplayMemberBinding="{Binding linespeed30Pr}"/>
+                    <GridViewColumn Header="Line Speed 100%" Width="100" local:GridViewColumnVisibilityManager.IsVisible="False"  DisplayMemberBinding="{Binding linespeed100pr}"/>
+                    <GridViewColumn Header="Line Speed @x" Width="100" local:GridViewColumnVisibilityManager.IsVisible="False"  DisplayMemberBinding="{Binding linespeedselected}"/>
+                    <GridViewColumn Header="STD Crew" Width="100" local:GridViewColumnVisibilityManager.IsVisible="True"  DisplayMemberBinding="{Binding stdcrew}"/>
+                    <GridViewColumn Header="Units Per Case" Width="100" local:GridViewColumnVisibilityManager.IsVisible="True"  DisplayMemberBinding="{Binding unitspercase}"/>
+                    <GridViewColumn Header="Stems Per BQT" Width="100" local:GridViewColumnVisibilityManager.IsVisible="True"  DisplayMemberBinding="{Binding stemsPerBqt}"/>
+                    <GridViewColumn Header="Hand Tiers" Width="100" local:GridViewColumnVisibilityManager.IsVisible="True"  DisplayMemberBinding="{Binding handtiecrew}"/>
+                    <GridViewColumn Header="Hand Tie Speed" Width="100" local:GridViewColumnVisibilityManager.IsVisible="True"  DisplayMemberBinding="{Binding handtiespeed}"/>
+                    <GridViewColumn Header="STD Boxes Per Hour" Width="150" local:GridViewColumnVisibilityManager.IsVisible="True"  DisplayMemberBinding="{Binding stdboxesperhour}"/>
+                    <GridViewColumn Header="Expected Boxes Per Hour" Width="150" local:GridViewColumnVisibilityManager.IsVisible="True"  DisplayMemberBinding="{Binding expectedboxesperhour}"/>
+                    <GridViewColumn Header="Expected Bqt Per Hour" Width="150" local:GridViewColumnVisibilityManager.IsVisible="True"  DisplayMemberBinding="{Binding expectedbqtperhour}"/>
+                    <GridViewColumn Header="Cost Per Case" Width="100" local:GridViewColumnVisibilityManager.IsVisible="True"  DisplayMemberBinding="{Binding costpercase}"/>
+                    <GridViewColumn Header="Cost Per Bqt" Width="100"  local:GridViewColumnVisibilityManager.IsVisible="True" DisplayMemberBinding="{Binding costperbqt}"/>
+                    <GridViewColumn Header="STD Max Rate" Width="100" local:GridViewColumnVisibilityManager.IsVisible="True"  DisplayMemberBinding="{Binding stdmaxrate}"/>
+
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <ComboBox Name="ActivateDeactivateComboBox" HorizontalAlignment="Left" Margin="332,17,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ActivateDeactivateComboBox_SelectionChanged"/>
+        <Label Content="Activate/Deactivate:" HorizontalAlignment="Left" Margin="211,14,0,0" VerticalAlignment="Top" RenderTransformOrigin="-5,0.154"/>
+        <Label Content="Group:" HorizontalAlignment="Left" Margin="20,14,0,0" VerticalAlignment="Top" RenderTransformOrigin="-5,0.154"/>
+        <ComboBox x:Name="GroupComboBox" HorizontalAlignment="Left" Margin="74,14,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="GroupComboBox_SelectionChanged"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--Spacing is in cm. Distance between bunches (cup middles) -->
+<!--Still not implemented for Mecafloras and Offline-->
+<!-- needs to be kept updated for new spacings by just adding XML element following already existing pattern-->
+
+<Spacings>
+  <Spacing>
+    <Name>Standard  - every wide gap</Name>
+    <CodeName>EveryWidegap</CodeName>
+    <Distance>38</Distance>
+  </Spacing>
+  <Spacing>
+    <Name>Every Other wide gap</Name>
+    <CodeName>EveryOtherWideOrNarrow</CodeName>
+    <Distance>76</Distance>
+  </Spacing>
+  <Spacing>
+    <Name>Fast - every gap (narrow and wide)</Name>
+    <CodeName>EveryGapNarrowAndWide</CodeName>
+    <Distance>19</Distance>
+  </Spacing>
+  <Spacing>
+    <Name>Slow - miss three gaps (narrow and wide)</Name>
+    <CodeName>SlowMissThreeGapsNarrowAndWide</CodeName>
+    <Distance>76</Distance>
+  </Spacing>
+  <Spacing>
+    <Name>Extra Slow - miss  two wide gaps</Name>
+    <CodeName>ExtraSlowMissTwoWideGaps</CodeName>
+    <Distance>114</Distance>
+  </Spacing>
+  <Spacing>
+    <Name>Extra extra Slow - miss  two wide gaps</Name>
+    <CodeName>ExtraExtraSlowMissTwoWideGaps</CodeName>
+    <Distance>114</Distance>
+  </Spacing>
+  <Spacing>
+    <Name>Hand Finish in thirds, miss one gap (narrow or wide)</Name>
+    <CodeName>HandFinishInThirdsMissOneGapNarrowOrWide</CodeName>
+    <Distance>76</Distance>
+  </Spacing>
+  <Spacing>
+    <Name>Hand Finish in thirds, miss two gaps (narrow and wide)</Name>
+    <CodeName>HandFinishInThirdsMissTwoGapsNarrowAndWide</CodeName>
+    <Distance>95</Distance>
+  </Spacing>
+  <Spacing>
+    <Name>BQT in 3 wide then miss one</Name>
+    <CodeName>BQTIn3WideThenMissOne</CodeName>
+    <Distance>152</Distance>
+  </Spacing>
+  <Spacing>
+    <Name>BQT in  wide hole x5  then miss one</Name>
+    <CodeName>BQTInWideHoleX5ThenMissOne</CodeName>
+    <Distance>114</Distance>
+  </Spacing>
+  <Spacing>
+    <Name>BQT in 2 wide then miss one</Name>
+    <CodeName>BQTIn2WideThenMissOne</CodeName>
+    <Distance>57</Distance>
+  </Spacing>
+  <Spacing>
+    <Name>BQT in every other wide</Name>
+    <CodeName>BQTInEveryOtherWide</CodeName>
+    <Distance>76</Distance>
+  </Spacing>
+  <Spacing>
+    <Name>Mecaflor-Every BCD</Name>
+    <CodeName>MecafloraEveryBCD</CodeName>
+    <Distance>1</Distance>
+  </Spacing>
+  <Spacing>
+    <Name>Packed off line</Name>
+    <CodeName>PackedOffline</CodeName>
+    <Distance>1</Distance>
+  </Spacing>
+  <Spacing>
+    <Name>Mecaflor-Every other  BCD</Name>
+    <CodeName>MecafloraEveryOtherBCD</CodeName>
+    <Distance>1</Distance>
+  </Spacing>
+  <Spacing>
+    <Name>Hand Finish in thirds, miss three gaps (narrow and wide)</Name>
+    <CodeName>HandFinishInThirdsMissThreeGapsNarrowAndWide</CodeName>
+    <Distance>95</Distance>
+  </Spacing>
+</Spacings>

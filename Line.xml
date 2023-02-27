@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<!--Line speeds are mPM (meters per Minute)-->
+<!-- These speeds can and needs to be adjusted to latest-->
+<Lines>
+  <Line>
+    <Name>Line 2</Name>
+    <LineID>B1L2</LineID>
+    <Building>Building 1</Building>
+    <StartSpeed Name="30%">6.5</StartSpeed>
+    <EndSpeed Name="100%">21.2</EndSpeed>
+  </Line>
+  <Line>
+    <Name>Line 3</Name>
+    <LineID>B1L3</LineID>
+    <Building>Building 1</Building>
+    <StartSpeed Name="30%">6.0</StartSpeed>
+    <EndSpeed Name="100%">21.2</EndSpeed>
+  </Line>
+  <Line>
+    <Name>Line 4</Name>
+    <LineID>B1L4</LineID>
+    <Building>Building 1</Building>
+    <StartSpeed Name="30%">6.0</StartSpeed>
+    <EndSpeed Name="100%">21.3</EndSpeed>
+  </Line>
+  <Line>
+    <Name>Line 5</Name>
+    <LineID>B1L5</LineID>
+    <Building>Building 1</Building>
+    <StartSpeed Name="30%">6.44</StartSpeed>
+    <EndSpeed Name="100%">21.2</EndSpeed>
+  </Line>
+  <Line>
+    <Name>Line 6</Name>
+    <LineID>B1L6</LineID>
+    <Building>Building 1</Building>
+    <StartSpeed Name="30%">6.45</StartSpeed>
+    <EndSpeed Name="100%">21.5</EndSpeed>
+  </Line>
+
+  <Line>
+    <Name>Line 3 (Terra)</Name>
+    <LineID>B2L3</LineID>
+    <Building>Building 2</Building>
+    <StartSpeed Name="30%">6.4</StartSpeed>
+    <EndSpeed Name="100%">21.8</EndSpeed>
+  </Line>
+  <Line>
+    <Name>Line 4</Name>
+    <LineID>B2L4</LineID>
+    <Building>Building 2</Building>
+    <StartSpeed Name="30%">6.3</StartSpeed>
+    <EndSpeed Name="100%">21.7</EndSpeed>
+  </Line>
+  <Line>
+    <Name>Line 5</Name>
+    <LineID>B2L5</LineID>
+    <Building>Building 2</Building>
+    <StartSpeed Name="30%">6.3</StartSpeed>
+    <EndSpeed Name="100%">21.6</EndSpeed>
+  </Line>
+  <Line>
+    <Name>Line 6</Name>
+    <LineID>B2L6</LineID>
+    <Building>Building 2</Building>
+    <StartSpeed Name="30%">6.25</StartSpeed>
+    <EndSpeed Name="100%">21.4</EndSpeed>
+  </Line>
+  <Line>
+    <Name>Line 7</Name>
+    <LineID>B2L7</LineID>
+    <Building>Building 2</Building>
+    <StartSpeed Name="30%">6.0</StartSpeed>
+    <EndSpeed Name="100%">20.3</EndSpeed>
+  </Line>
+  <Line>
+    <Name>Line 8</Name>
+    <LineID>B2L8</LineID>
+    <Building>Building 2</Building>
+    <StartSpeed Name="30%">6.2</StartSpeed>
+    <EndSpeed Name="100%">21.4</EndSpeed>
+  </Line>
+</Lines>

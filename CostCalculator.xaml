@@ -1,0 +1,85 @@
+﻿<Window x:Class="WPFCostCalculator.CostCalculator"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFCostCalculator"
+        mc:Ignorable="d"
+        Title="Cost Calculator" Height="642" Width="800" Background="#D2D9D9">
+    <Grid>
+        <Label Content="Cost Calculator" HorizontalContentAlignment="Center" FontSize="20" FontWeight="Bold" Margin="159,1,147,0" VerticalAlignment="Top" />
+        <Label Content="Line Speed:"  FontWeight="Bold" HorizontalAlignment="Left" Margin="10,48,0,0" VerticalAlignment="Top" Width="91" Height="30" />
+        <Slider ToolTip="Minimum Speed 30% -- Maximum Speed 100% " Name="SpeedSlider" HorizontalAlignment="Left" Margin="101,48,0,0" VerticalAlignment="Top" Width="185" Minimum="30" Maximum="100" TickFrequency="10" Interval="1" TickPlacement="Both" Value="30" Background="#565757" ValueChanged="SpeedSlider_ValueChanged" />
+        <TextBox ToolTip="Doulbe click will enter in edit mode. Once edited {enter} will exit edit mode and save" Name="SelectedSpeedTextBox" Text="{Binding ElementName=SpeedSlider, Path=Value,StringFormat=N0}"  IsReadOnly="True" FontWeight="Bold" FontSize="15" HorizontalContentAlignment="Center" BorderBrush="Black" VerticalContentAlignment="Center" BorderThickness="3"  HorizontalAlignment="Left" Margin="295,50,0,0" VerticalAlignment="Top" Width="91" Height="30" MouseDoubleClick="SelectedSpeedTextBox_MouseDoubleClick" KeyDown="SelectedSpeedTextBox_KeyDown" />
+        <Label ToolTip="Building" Content="Building" Background="#F4D9A6" HorizontalAlignment="Left" Margin="574,44,0,0" VerticalAlignment="Top" Width="106" />
+        <Label ToolTip="Physical Line" Content="Line" Background="#AB7A1F" HorizontalAlignment="Left" Margin="574,75,0,0" VerticalAlignment="Top" Width="106" />
+        <Label  Name="SelectedSpeedLabel"  Background="#7DE17D" Content="Belt Speed @x" HorizontalAlignment="Left" Margin="574,106,0,0" VerticalAlignment="Top" Width="106" MouseEnter="SelectedSpeedLabel_MouseEnter" MouseLeave="SelectedSpeedLabel_MouseLeave" />
+        <ComboBox Name="BuildingSelection" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left"  Height="26" Margin="685,44,0,0"   VerticalAlignment="Top" Width="81" SelectionChanged="Building_SelectionChanged" />
+
+        <ComboBox Name="LineSelection" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left"  Height="26" Margin="685,75,0,0"   VerticalAlignment="Top" Width="81" SelectionChanged="LineSelection_SelectionChanged" />
+
+        <TextBox Name="LineSpeedSelected" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" IsReadOnly="True" Height="26" Margin="685,106,0,0" TextWrapping="Wrap" Text="...." VerticalAlignment="Top" Width="81" />
+        <Label Content="Spacing:" FontWeight="Bold" HorizontalAlignment="Left" Margin="11,151,0,0" VerticalAlignment="Top" Width="91" />
+        <Label Content="Job Type:" FontWeight="Bold" HorizontalAlignment="Left" Margin="10,83,0,0" VerticalAlignment="Top" Width="91" />
+        <Label Content="Job Category:"  FontWeight="Bold" HorizontalAlignment="Left" Margin="10,114,0,0" VerticalAlignment="Top" Width="91" />
+        <ComboBox Name="JobTypeComboBox" HorizontalAlignment="Left" Margin="101,87,0,0" VerticalAlignment="Top" Width="185" SelectionChanged="JobTypeComboBox_SelectionChanged" />
+        <ComboBox Name="JobCategoryComboBox" HorizontalAlignment="Left" Margin="101,114,0,0" VerticalAlignment="Top" Width="185" SelectionChanged="JobCategoryComboBox_SelectionChanged" />
+        <ListBox  ScrollViewer.HorizontalScrollBarVisibility="Auto" Name="SpacingListBox" HorizontalAlignment="Left" Margin="68,144,0,0" Width="320" Height="210" VerticalAlignment="Top" SelectionChanged="SpacingListBox_SelectionChanged" />
+        <TextBox ToolTip="Doulbe click will enter in edit mode. Once edited {enter} will exit edit mode and save" Name="TargetPRTextBox" Text="88"  IsReadOnly="True" FontWeight="Bold" FontSize="15" HorizontalContentAlignment="Center" BorderBrush="Black" VerticalContentAlignment="Center" BorderThickness="3"  HorizontalAlignment="Left" Margin="458,50,0,0" VerticalAlignment="Top" Width="91" Height="30"  KeyDown="TargetPRTextBox_KeyDown" MouseDoubleClick="TargetPRTextBox_MouseDoubleClick" />
+        <Label Content="Target % :" HorizontalAlignment="Left" FontWeight="Bold" Margin="391,50,0,0" VerticalAlignment="Top" Width="91" Height="30" />
+        <Label Content="Hourly Rate:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" FontWeight="Bold" Margin="366,83,0,0" VerticalAlignment="Top" Width="91" Height="30" />
+        <TextBox ToolTip="Doulbe click will enter in edit mode. Once edited {enter} will exit edit mode and save" x:Name="HourlyRateTextBox" Text="12.83902"  IsReadOnly="False" FontWeight="Bold" FontSize="15" HorizontalContentAlignment="Center" BorderBrush="Black" VerticalContentAlignment="Center" BorderThickness="3"  HorizontalAlignment="Left" Margin="457,83,0,0" VerticalAlignment="Top" Width="91" Height="30" KeyDown="HourlyRateTextBox_KeyDown" MouseDoubleClick="HourlyRateTextBox_MouseDoubleClick" />
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="105" Margin="567,35,0,0" VerticalAlignment="Top" Width="215" />
+
+        <Canvas Margin="393,152,0,0" Background="#AECE9E" Height="343" VerticalAlignment="Top" HorizontalAlignment="Left" Width="389">
+            <Border BorderBrush="Black" BorderThickness="1" Height="343" Width="389" />
+            <Label Content="Product Code:" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="89" Canvas.Top="43" Canvas.Left="12" />
+            <Label Content="Activate/Deactivate" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="117" Canvas.Left="12" Canvas.Top="74" />
+            <Label ToolTip="Event Line, Seasonal Line, Core Moment 1 etc." Content="Line type" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="117" Canvas.Left="12" Canvas.Top="105" />
+            <Label ToolTip="" Content="Product" HorizontalAlignment="Left" VerticalAlignment="Top" Width="117" Canvas.Left="12" Canvas.Top="136" />
+            <Label ToolTip="Prophet Description" Content="PR Description" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="117" Canvas.Left="12" Canvas.Top="167" />
+            <Label ToolTip="Amount of Ops runing job" Content="STD Crew" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="117" Canvas.Left="12" Canvas.Top="198" />
+            <Label ToolTip="Amount of Bunches per Bucket/case" Content="Units Per Case" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="117" Canvas.Left="12" Canvas.Top="221" />
+
+            <TextBox Name="ProductCodeTextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="157" Canvas.Left="129" Canvas.Top="46" TextChanged="ProductCodeTextBox_TextChanged" />
+            <ComboBox Name="ActivateDeactivateComboBox" HorizontalAlignment="Left" Height="23"  VerticalAlignment="Top" Width="157" Canvas.Left="129" Canvas.Top="73" SelectionChanged="ActivateDeactivateComboBox_SelectionChanged" />
+            <TextBox Name="LineTypeTextBox" HorizontalAlignment="Left" Height="23"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="157" Canvas.Left="129" Canvas.Top="105" />
+            <TextBox x:Name="ProductDescriptionTextBox" HorizontalAlignment="Left" Height="23"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="157" Canvas.Left="129" Canvas.Top="133" />
+            <TextBox Name="ProphetProductDescription" HorizontalAlignment="Left" Height="23"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="157" Canvas.Left="129" Canvas.Top="167" />
+            <TextBox  Name="STDCrewTextBox" HorizontalAlignment="Left" Height="23"  TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="41" Canvas.Left="129" Canvas.Top="197" TextChanged="STDCrewTextBox_TextChanged" />
+            <TextBox  Name="UnitsPerCaseTextBox" HorizontalAlignment="Left" Height="23"  TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="41" Canvas.Left="129" Canvas.Top="224" TextChanged="UnitsPerCaseTextBox_TextChanged" />
+            <Label Content="Manual Enter Field" HorizontalContentAlignment="Center" Background="#378835" FontWeight="Black" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="367" Canvas.Top="10" Canvas.Left="12" />
+
+            <Canvas  Name="HandTieCanvas" Visibility="Hidden" Height="75" VerticalAlignment="Top" Canvas.Left="12" Canvas.Top="258">
+                <Border BorderBrush="Black"  BorderThickness="1" HorizontalAlignment="Left" Height="76"  VerticalAlignment="Top" Width="363" Canvas.Top="-1" />
+                <Label ToolTip=" Fastest Hand-Tie Speed (Seconds Per bouquet)" Content="Hand-Tie Speed" />
+                <Label ToolTip=" Amount of Ops how many will do Hand Tie job" Content="Number Of Hand Tiers" Canvas.Top="26" />
+                <TextBox Name="HandTieSpeedTextBox" Width="84" Canvas.Left="100" Canvas.Top="3" />
+                <TextBox Name="HandTieCrewTexBox" Width="84" Canvas.Left="129" Canvas.Top="31" />
+            </Canvas>
+            <Label ToolTip="Amount of Stems Per Bqt" Content="Stems per Bqt:" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="92" Canvas.Left="175" Canvas.Top="220" />
+            <TextBox  x:Name="StemsPerBqt" HorizontalAlignment="Left" Height="23"  TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="41" Canvas.Left="272" Canvas.Top="224" TextChanged="StemsPerBqt_TextChanged" />
+        </Canvas>
+        <Canvas x:Name="CalculationField" Margin="11,359,0,0" Background="#AECE9E" Height="242" VerticalAlignment="Top" HorizontalAlignment="Left" Width="377">
+            <Border BorderBrush="Black" BorderThickness="1" Height="242" Width="377" />
+
+            <Label ToolTip="Auto Calculated value based on information provided. This is 100% (Perfect RUN)" Content="STD Boxes Per Hour" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="117" Canvas.Top="36" Canvas.Left="10" />
+            <Label ToolTip="Auto Calculated value based on information provided. This is based on Efficiency Target of Perfect RUN (STD Boxes Per Hour)" Content="Expected Boxes Per Hour" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="143" Canvas.Left="10" Canvas.Top="67" />
+            <Label ToolTip="Auto Calculated value based on information provided.  " Content="Expected Bqt Per Hour" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="143" Canvas.Top="98" Canvas.Left="10" RenderTransformOrigin="-0.364,-3.538" />
+
+            <Label ToolTip="Auto Calculated value based on information provided. Cost per bunch (Overheads Not Included)  " Content="Cost per Bqt" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="143" Canvas.Top="160" Canvas.Left="10" />
+            <Label ToolTip="Auto Calculated value based on information provided. Cost per case (Overheads Not Included)  " Content="Cost per Case" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="143" Canvas.Top="129" Canvas.Left="10" />
+            <Label ToolTip="Auto Calculated value based on information provided. STD Max Rate  " Content="STD Max Rate" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="143" Canvas.Left="10" Canvas.Top="193" />
+            <Label  Content="Auto Calculated Field" Background="#378835" HorizontalAlignment="Left" HorizontalContentAlignment="Center" FontWeight="Black" BorderBrush="Black" BorderThickness="1" VerticalAlignment="Top" Width="357" Canvas.Top="5" Canvas.Left="10" />
+            <Label Name="CalcStdBoxes" Content="Waiting Data" Canvas.Left="153" Canvas.Top="35" BorderBrush="Black" BorderThickness="1" Width="81" />
+            <Label Name="CalcExpectedBoxes" Content="Waiting Data" Canvas.Left="153" Canvas.Top="67" BorderBrush="Black" BorderThickness="1" />
+            <Label x:Name="CalcExpectedBqt" Content="Waiting Data" Canvas.Left="153" Canvas.Top="98" BorderBrush="Black" BorderThickness="1" />
+            <Label x:Name="CalcCostPerCase" Content="Waiting Data" Canvas.Left="153" Canvas.Top="129" BorderBrush="Black" BorderThickness="1" />
+            <Label x:Name="CalcCostPerBqt" Content="Waiting Data" Canvas.Left="153" Canvas.Top="160" BorderBrush="Black" BorderThickness="1" />
+            <Label x:Name="CalcStdMaxRate" Content="Waiting Data" Canvas.Left="153" Canvas.Top="193" BorderBrush="Black" BorderThickness="1" />
+        </Canvas>
+        <Button Name="CalculateCost" Content="Calculate" Margin="0,0,10,10" Click="CalculateCost_Click" HorizontalAlignment="Right" Width="75" Height="20" VerticalAlignment="Bottom" />
+        <TextBox HorizontalAlignment="Left" IsReadOnly="True" Height="76" Margin="404,500,0,0" TextWrapping="Wrap" Text="Sample: Speed 33% Spacing: Standard Every Wide Gap. Units 5 crew 13 std output 234 cpb 0.165 cpc 0.825 stdmax rate 19.527" VerticalAlignment="Top" Width="362" />
+        <Button Name="RequestTrack" Content="Request Track" IsEnabled="False" HorizontalAlignment="Left" Margin="548,581,0,0" VerticalAlignment="Top" Width="116" Click="RequestTrack_Click" />
+    </Grid>
+</Window>
